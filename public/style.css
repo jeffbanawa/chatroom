@@ -1,0 +1,138 @@
+body {
+    font: 24px Helvetica;
+    background: #efefef;
+}
+
+#main {
+    position: absolute;
+    top: 60px;
+    bottom: 50px;
+    left: 4px;
+    right: 4px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-flow: row;
+    align-self: flex-end;
+}
+
+#main > article {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    flex: 3 1 60%;
+    order: 2;
+    background: #666666;
+    flex-grow: 1;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+
+    overflow: auto;
+
+    /* for Firefox */
+    min-height: 0;
+}
+
+
+#main > aside {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    flex: 1 6 5%;
+    order: 3;
+    background: #666666;
+    flex-grow: 1;
+
+    overflow: auto;
+
+    /* for Firefox */
+    min-height: 0;
+}
+
+header, footer {
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 50px;
+    border: 1px solid #8888bb;
+    background: #d0d0d0;
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+    #main, #page {
+        flex-direction: column;
+    }
+
+    #main > article, #main > nav, #main > aside {
+        /* Return them to document order */
+        order: 0;
+    }
+
+    #main > nav, #main > aside, header, footer {
+        min-height: 50px;
+        max-height: 50px;
+    }
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form
+{
+    background: #000;
+    padding: 3px;
+    position: FIXED;
+    bottom: 0;
+    width: 100%;
+}
+
+form input
+{
+    border: 0;
+    padding: 10px;
+    width: 90%;
+    margin-right: .5%;
+}
+
+form button
+{
+    width: 9%;
+    background: rgb(130, 224, 255);
+    border: none;
+    padding: 10px;
+}
+
+#messages
+{
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#messages li
+{
+    padding: 5px 10px;
+    vertical-align: bottom;
+
+}
+
+#users
+{
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#users li
+{
+    padding: 5px 10px;
+}
