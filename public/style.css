@@ -84,7 +84,7 @@ header, footer {
 
 form
 {
-    background: #000;
+    background: #efefef;
     padding: 3px;
     position: FIXED;
     bottom: 0;
@@ -93,7 +93,7 @@ form
 
 form input
 {
-    border: 0;
+    border: 1px solid #8888bb;
     padding: 10px;
     width: 90%;
     margin-right: .5%;
@@ -103,7 +103,7 @@ form button
 {
     width: 9%;
     background: rgb(130, 224, 255);
-    border: none;
+    border: 1px solid #8888bb;
     padding: 10px;
 }
 

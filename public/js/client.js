@@ -7,7 +7,8 @@ $(function () {
         return false;
     });
     socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg));
+        var message = formatMsg(msg);
+        $('#messages').append(message);
         goDown();
     });
 
@@ -37,6 +38,11 @@ $(function () {
     function goDown() {
         let div = document.getElementById("messages");
         div.scrollTop = div.scrollHeight;
+    }
+
+    function formatMsg(msg) {
+        var formatted = "<li><b>" + msg + "</b></li>";
+        return formatted;
     }
 
 

@@ -53,6 +53,7 @@ io.on('connection', function(socket){
                 users.push(name);
                 io.emit('update user', users);
                 socket.emit('first connect', name);
+                socket.emit('change header', name);
             }
         }
     });
@@ -62,7 +63,6 @@ io.on('connection', function(socket){
         users.splice(users.indexOf(name), 1);
         connections.splice(connections.indexOf(socket), 1);
         console.log('Disconnected: %s sockets connected', connections.length);
-        console.log(users.toString());
         io.emit('update user', users);
 
     });
